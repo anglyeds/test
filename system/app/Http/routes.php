@@ -1,7 +1,5 @@
 <?php
-use App\User;
-use App\Role;
-use App\Permission;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,9 +10,8 @@ use App\Permission;
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', function () {
-
 
 $user = User::find(1);
 // $admin = Role::find(3);
@@ -33,6 +30,10 @@ dd($user->hasRole('admin'));
 });
 Route::get('/test', function(){
 
+});*/
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::auth();
