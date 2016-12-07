@@ -1,5 +1,7 @@
 <?php
-
+use App\User;
+use App\Role;
+use App\Permission;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,7 +14,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+
+$user = User::find(1);
+// $admin = Role::find(3);
+// foreach (Permission::all() as $value) {
+// $admin->attachPermission($value);
+	
+// }
+// role attach alias
+// $user->attachRole($admin); // parameter can be an Role object, array, or id
+
+// or eloquent's original technique
+// $user->roles()->attach($admin->id);
+//     return view('welcome');
+
+dd($user->hasRole('admin'));
+});
+Route::get('/test', function(){
+
 });
 
 Route::auth();
