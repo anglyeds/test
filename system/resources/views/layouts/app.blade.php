@@ -33,6 +33,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
+                        
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -50,6 +51,7 @@
                     <li><a href="{{ route('users.index') }}">Users</a></li>
                     <li><a href="{{ route('roles.index') }}">Roles</a></li>
                     <li><a href="{{ route('itemCRUD2.index') }}">Items</a></li>
+                    <li><a href="{{ route('chains.index') }}">Services</a></li>
                 </ul>
                 @endif
             </div>

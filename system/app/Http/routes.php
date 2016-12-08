@@ -59,4 +59,12 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('itemCRUD2/{id}/edit',['as'=>'itemCRUD2.edit','uses'=>'ItemCRUD2Controller@edit','middleware' => ['permission:item-edit']]);
 	Route::patch('itemCRUD2/{id}',['as'=>'itemCRUD2.update','uses'=>'ItemCRUD2Controller@update','middleware' => ['permission:item-edit']]);
 	Route::delete('itemCRUD2/{id}',['as'=>'itemCRUD2.destroy','uses'=>'ItemCRUD2Controller@destroy','middleware' => ['permission:item-delete']]);
+
+	Route::get('chains',['as'=>'chains.index','uses'=>'ChainController@index','middleware' => ['permission:item-list|item-create|item-edit|item-delete']]);
+	Route::get('chains/create',['as'=>'chains.create','uses'=>'ChainController@create','middleware' => ['permission:item-create']]);
+	Route::post('chains/create',['as'=>'chains.store','uses'=>'ChainController@store','middleware' => ['permission:item-create']]);
+	Route::get('chains/{id}',['as'=>'chains.show','uses'=>'ChainController@show']);
+	Route::get('chains/{id}/edit',['as'=>'chains.edit','uses'=>'ChainController@edit','middleware' => ['permission:item-edit']]);
+	Route::patch('chains/{id}',['as'=>'chains.update','uses'=>'ChainController@update','middleware' => ['permission:item-edit']]);
+	Route::delete('chains/{id}',['as'=>'chains.destroy','uses'=>'ChainController@destroy','middleware' => ['permission:item-delete']]);
 });
