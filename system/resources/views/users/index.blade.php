@@ -16,7 +16,8 @@
 			<p>{{ $message }}</p>
 		</div>
 	@endif
-	<table class="table table-bordered">
+	<div class="table-responsive">     
+	<table class="table table-striped table-bordered table-hover table-condensed">
 		<tr>
 			<th>No</th>
 			<th>Name</th>
@@ -46,5 +47,6 @@
 	</tr>
 	@endforeach
 	</table>
+	</div>
 	{!! $data->render() !!}
 @endsection

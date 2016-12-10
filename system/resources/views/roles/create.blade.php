@@ -52,6 +52,19 @@
                 @endforeach
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Permission:</strong>
+                <br/>
+                <table class="table table-striped">
+                @foreach($permission as $value)
+                    <tr><td>{{ $value->display_name }}</td></tr>
+                @endforeach
+                </table>
+                <label>{{ Form::select('permission[]', array('class' => 'name') , 'S') }}</label>
+                <br/>
+            </div>
+        </div>        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 				<button type="submit" class="btn btn-primary">Submit</button>
         </div>
